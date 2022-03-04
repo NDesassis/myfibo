@@ -29,6 +29,9 @@ jobs:
     
     - name : ls
       run : ls
+	
+    - name : pwd
+      run : echo pwd
 
     - name : github.workspace
       run : echo ${{github.workspace}}
