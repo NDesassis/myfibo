@@ -14,7 +14,8 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
-    container: ndesassis/testrepo
+    container:
+      image: ndesassis/testrepo
 
     steps:
     - uses: actions/checkout@v2
