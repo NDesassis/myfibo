@@ -14,7 +14,7 @@ jobs:
   
   build:
     runs-on: ubuntu-latest  
-    container: ndesassis/testrepo  
+    #container: ndesassis/testrepo  
 
     steps:
     - uses: actions/checkout@v2
@@ -27,6 +27,7 @@ jobs:
       # Build your program with the given configuration (-j 16 option seems having no effect on Gitub Action)
       
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target build_tests -- -j 8
+
     	
     - name : pwd
       run : pwd
