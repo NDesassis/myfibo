@@ -37,6 +37,9 @@ jobs:
     - name : ls
       run : ls
 
+    - name : github workspace
+      run  : echo ${{github.workspace}}
+
     - name: Test
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.  
