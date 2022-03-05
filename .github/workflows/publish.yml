@@ -24,13 +24,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name : deploy
-      run : deploy/pythonBuild.sh
+      run : deploy/pythonBuild.sh ${{ secrets.TEST_PIPY_API_LOGIN }} ${{ secrets.TEST_PIPY_API_MDP }} ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}
 
-    - name: publish
-      env:
-        TWINE_USERNAME: ${{ secrets.TEST_PIPY_API_LOGIN }}
-        TWINE_PASSWORD: ${{ secrets.TEST_PIPY_API_MDP }}
-      run: |
-	python3 -m pip install twine
-	python3 -m twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
+  
 

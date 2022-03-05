@@ -7,3 +7,9 @@ cmake --build build --target python_build
 cd build/python/Release
 python3 setup.py bdist_wheel --plat-name=manylinux_2_x86_64
 
+TWINE_USERNAME = $1
+TWINE_PASSWORD = $2
+
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ $3/dist/*
+
+
