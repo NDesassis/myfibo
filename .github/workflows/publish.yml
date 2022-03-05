@@ -30,7 +30,9 @@ jobs:
       run : echo $PATH
 
     - name: Configure CMake
-      run: cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run:
+	export PATH=__w/opt/python/cp38-cp38/bin/:$PATH 
+	cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       # Build your program with the given configuration (-j 16 option seems having no effect on Gitub Action)
