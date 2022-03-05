@@ -30,5 +30,7 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.TEST_PIPY_API_LOGIN }}
         TWINE_PASSWORD: ${{ secrets.TEST_PIPY_API_MDP }}
-      run: python3 -m twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
+      run: |
+	python3 -m pip install twine
+	python3 -m twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
 
