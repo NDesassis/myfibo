@@ -18,7 +18,7 @@ jobs:
     container:
       image: ndesassis/testrepo
       env:
-        TOTO: tutu
+        TOTO: __w/opt/python/cp38-cp38/bin/:$PATH
     steps:
       
 
@@ -28,7 +28,7 @@ jobs:
     #  run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev libhdf5-dev doxygen
       
     - name : Python Version
-      run: export PATH=__w/opt/python/cp38-cp38/bin/:$PATH
+      run: echo $PATH
 
     - name : PATH
       run : echo $PATH
