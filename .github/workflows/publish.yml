@@ -27,8 +27,15 @@ jobs:
       run : deploy/pythonBuild.sh
 
     - name : ls
-      working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
+      #working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
       run : ls 
+
+
+    - name: Publish distribution to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.TEST_PYPI_MDP }}
+        repository_url: https://test.pypi.org/legacy/
 
 
     - name: Publish distribution to Test PyPI
