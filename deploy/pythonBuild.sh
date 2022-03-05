@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH= /opt/python/cp39-cp39/bin/:$PATH
+export PATH=/opt/python/cp39-cp39/bin/:$PATH
 cmake -Bbuild 
 cmake --build build --target python_build
 cd build/python/Release
