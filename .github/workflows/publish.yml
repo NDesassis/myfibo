@@ -24,7 +24,6 @@ jobs:
     - uses: actions/checkout@v2
       
     - name : deploy
-      working-directory: build/../
       run : deploy/pythonBuild.sh
     
     #- name : chmod
