@@ -30,7 +30,7 @@ jobs:
       run : echo $PATH
 
     - name: Configure CMake
-      run:
+      run: |
 	export PATH=__w/opt/python/cp38-cp38/bin/:$PATH 
 	cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
