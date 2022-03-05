@@ -25,6 +25,12 @@ jobs:
     #- name: Install dependencies
     #  run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev libhdf5-dev doxygen
       
+    - name : Python Version
+      run: export PATH=/opt/python/cp38-cp38/bin/:$PATH
+
+    - name : PATH
+      run : echo $PATH
+
     - name: Configure CMake
       run: cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
@@ -47,7 +53,7 @@ jobs:
 
     - name: Create whl
       working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}
-      run : python3.8 setup.py bdist_wheel --plat-name=manylinux_2_x86_64
+      run : python3 setup.py bdist_wheel --plat-name=manylinux_2_x86_64
 
     #- name: Publish distribution to Test PyPI
     #  uses: pypa/gh-action-pypi-publish@master
