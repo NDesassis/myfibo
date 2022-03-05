@@ -27,7 +27,7 @@ jobs:
       run : deploy/pythonBuild.sh
 
     - name : ls
-      #working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
+      working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
       run : ls 
 
 
