@@ -25,38 +25,12 @@ jobs:
       
     - name : deploy
       run : deploy/pythonBuild.sh
-    
-    #- name : chmod
-    #  run : chmod 777 
-
-    #- name: Configure CMake
-    #  run: cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-
-    #- name: Build
-      # Build your program with the given configuration (-j 16 option seems having no effect on Gitub Action)
-    #  run: cmake --build ${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}} --target build_tests -- -j 8
-
-    #- name : pwd
-    #  run : pwd
-
-    #- name : ls
-    #  run : ls
 
 
-    #- name: Test
-    #  working-directory: build
-    #  # Execute tests defined by the CMake configuration.  
-    #  # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-    #  run: ctest -C ${{env.BUILD_TYPE}} --output-on-failure
-
-    #- name: Create whl
-    #  working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}
-    #  run : python3 setup.py bdist_wheel --plat-name=manylinux_2_x86_64
-
-    #- name: Publish distribution to Test PyPI
-    #  uses: pypa/gh-action-pypi-publish@master
-    #  with:
-    #    password: ${{ secrets.TEST_PYPI_MDP}}
-    #    repository_url: https://test.pypi.org/legacy/
+    - name: Publish distribution to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.TEST_PYPI_MDP}}
+        repository_url: https://test.pypi.org/legacy/
 
 
