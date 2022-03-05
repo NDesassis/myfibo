@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ndesassis/testrepo
-    steps:
-    - name : Environnement
       env:
         TOTO: tutu
+    steps:
+      
 
     - uses: actions/checkout@v2
     
