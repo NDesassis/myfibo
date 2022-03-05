@@ -35,8 +35,8 @@ jobs:
       run : ls dist
 
     - name: publish
-        env:
-          TWINE_USERNAME: ${{ secrets.TEST_PIPY_API_LOGIN }}
-          TWINE_PASSWORD: ${{ secrets.TEST_PIPY_API_MDP }}
-        run: twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
+      env:
+        TWINE_USERNAME: ${{ secrets.TEST_PIPY_API_LOGIN }}
+        TWINE_PASSWORD: ${{ secrets.TEST_PIPY_API_MDP }}
+      run: twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
 
