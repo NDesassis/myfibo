@@ -19,7 +19,7 @@ jobs:
       image: ndesassis/testrepo
     steps:
       env:
-        PATH: __w/opt/python/cp38-cp38/bin/:$PATH 
+        TOTO: tutu
     - uses: actions/checkout@v2
     
     #- name: Install dependencies
