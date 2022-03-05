@@ -17,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ndesassis/testrepo
-      env:
-	PATH: __w/opt/python/cp38-cp38/bin/:$PATH 
     steps:
+     env:
+	PATH: __w/opt/python/cp38-cp38/bin/:$PATH 
     - uses: actions/checkout@v2
     
     #- name: Install dependencies
