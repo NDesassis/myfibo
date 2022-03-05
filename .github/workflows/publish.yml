@@ -17,8 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ndesassis/testrepo
-    env: 
-     PYTHON : /opt/
     steps:
     - uses: actions/checkout@v2
     
@@ -26,7 +24,7 @@ jobs:
     #  run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev libhdf5-dev doxygen
       
     - name : Python Version
-      run: export PATH=/opt/python/cp38-cp38/bin/:$PATH
+      run: export PATH=__w/opt/python/cp38-cp38/bin/:$PATH
 
     - name : PATH
       run : echo $PATH
