@@ -18,8 +18,10 @@ jobs:
     container:
       image: ndesassis/testrepo
     steps:
+    - name : Environnement
       env:
         TOTO: tutu
+
     - uses: actions/checkout@v2
     
     #- name: Install dependencies
