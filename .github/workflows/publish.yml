@@ -32,7 +32,7 @@ jobs:
 
 
     - name: Publish distribution to Test PyPI
-      #working-directory : ${{env.BUILD_DIR}}
+      working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
       uses: pypa/gh-action-pypi-publish@master
       with:
         password: ${{ secrets.TEST_PYPI_MDP}}
@@ -41,4 +41,4 @@ jobs:
 
 
    
-
+:
