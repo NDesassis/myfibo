@@ -9,7 +9,7 @@ add_custom_target(python_build_package)
 # DEPENDENCIES
 
 # Look for Python3
-find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
+find_package(Python3.8 REQUIRED COMPONENTS Interpreter Development.Module)
 
 # Look for SWIG 4
 find_package(SWIG 4.0 REQUIRED)
