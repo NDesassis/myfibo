@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PATH=/opt/python/cp39-cp39/bin/:$PATH
+python3 -m pip install twine
 cmake -Bbuild 
 cmake --build build --target python_build
 cd build/python/Release
