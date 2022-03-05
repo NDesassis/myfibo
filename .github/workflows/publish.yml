@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ndesassis/testrepo
+      env:
+	PATH: __w/opt/python/cp38-cp38/bin/:$PATH 
     steps:
     - uses: actions/checkout@v2
     
@@ -30,9 +32,7 @@ jobs:
       run : echo $PATH
 
     - name: Configure CMake
-      run: |
-	export PATH=__w/opt/python/cp38-cp38/bin/:$PATH 
-	cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       # Build your program with the given configuration (-j 16 option seems having no effect on Gitub Action)
