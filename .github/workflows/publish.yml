@@ -18,8 +18,8 @@ jobs:
     container:
       image: ndesassis/testrepo
     steps:
-     env:
-	PATH: __w/opt/python/cp38-cp38/bin/:$PATH 
+      env:
+        PATH: __w/opt/python/cp38-cp38/bin/:$PATH 
     - uses: actions/checkout@v2
     
     #- name: Install dependencies
