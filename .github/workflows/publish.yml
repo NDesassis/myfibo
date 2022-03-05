@@ -26,17 +26,9 @@ jobs:
     - name : deploy
       run : deploy/pythonBuild.sh
 
-    - name : ls
-      working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
-      run : ls 
-
-    - name : ls
-      working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
-      run : ls dist
-
     - name: publish
       env:
         TWINE_USERNAME: ${{ secrets.TEST_PIPY_API_LOGIN }}
         TWINE_PASSWORD: ${{ secrets.TEST_PIPY_API_MDP }}
-      run: twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
+      run: python3 -m twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
 
