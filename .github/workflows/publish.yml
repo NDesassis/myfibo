@@ -34,8 +34,10 @@ jobs:
       working-directory : ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/
       run : ls dist
 
-    - name: Publish distribution 📦 to Test PyPI
-      uses: pypa/gh-action-pypi-publish@master
-      with:
-        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-        repository_url: https://test.pypi.org/legacy/
+    - name: publish
+          env:
+            TWINE_USERNAME: ${{ secrets.TEST_PIPY_API_LOGIN }}
+            TWINE_PASSWORD: ${{ secrets.TEST_PIPY_API_MDP }}
+          run: |
+	    twine upload --repository testpypi ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
+
