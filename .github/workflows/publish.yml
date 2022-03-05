@@ -26,7 +26,7 @@ jobs:
     #  run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev libhdf5-dev doxygen
       
     - name : Python Version
-      run: setenv PATH /opt/python/cp38-cp38/bin/:$PATH
+      run: export PATH=/opt/python/cp38-cp38/bin/:$PATH
 
     - name: Configure CMake
       run: cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
