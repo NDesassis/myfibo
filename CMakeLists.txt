@@ -28,7 +28,7 @@ cmake_minimum_required(VERSION 3.20)
 
 # Define project here
 project(myfibo
-  VERSION      0.0.1
+  VERSION      0.0.2
   DESCRIPTION  "Fibonacci simple class"
   HOMEPAGE_URL "https://github.com/fabien-ors/myfibo"
   LANGUAGES    C CXX # Enable C language for third party libraries
