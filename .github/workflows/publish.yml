@@ -26,7 +26,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name : deploy
-      run : bash -eux deploy/pythonBuild.sh  ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}} ${{env.LOGIN}} ${{env.MDP}}
+      run : bash -eux deploy/pythonBuild.sh  ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}} ${{env.LOGIN}} ${{env.PWD}}
       
 
   
