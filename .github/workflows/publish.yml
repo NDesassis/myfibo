@@ -29,6 +29,8 @@ jobs:
       
     - name : Upload
       run : python3 -m pip install twine 
+
+    - name : Upload
       run : python3 -m twine upload ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
       env:
         TWINE_USERNAME: __token__
