@@ -25,7 +25,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name : Create Wheels
-      run : bash -eux deploy/pythonBuild.sh  ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}} ${{matrix.python}}
+      run : deploy/pythonBuild.sh  ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}} ${{matrix.python}}
       
     - name : Upload
       run : python3.10 -m pip install twine 
