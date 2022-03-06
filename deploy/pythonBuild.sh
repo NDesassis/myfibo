@@ -11,6 +11,6 @@ export TWINE_USERNAME=$2
 export TWINE_PASSWORD=$3
 
 echo $TWINE_USERNAME
-python3 -m twine upload --repository-url https://test.pypi.org/legacy/ --verbose dist/* -u $2 -p $3
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ --verbose dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
 
 
