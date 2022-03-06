@@ -28,10 +28,8 @@ jobs:
       run : bash -eux deploy/pythonBuild.sh  ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}
       
     - name : Upload
-        uses: actions/setup-node@v1
-      run : |
-	python3 -m pip install twine 
-	python3 -m twine upload ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
+      run : python3 -m pip install twine 
+      run : python3 -m twine upload ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}}/dist/*
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TWINE_TEST_TOKEN }}
