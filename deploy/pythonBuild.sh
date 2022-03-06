@@ -10,9 +10,6 @@ python3 setup.py bdist_wheel --plat-name=manylinux_2_x86_64
 export TWINE_USERNAME=$2
 export TWINE_PASSWORD=$3
 
-echo $1
-ls
-pwd
-python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ --verbose dist/*
 
 
