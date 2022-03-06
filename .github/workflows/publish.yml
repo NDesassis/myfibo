@@ -26,8 +26,8 @@ jobs:
     - name : deploy
       run : bash -eux deploy/pythonBuild.sh  ${{env.BUILD_DIR}}/python/${{env.BUILD_TYPE}} #${{secrets.TEST_PIPY_API_LOGIN}} ${{secrets.TEST_PIPY_API_MDP}}
       env:
-        LOGIN = ${{secrets.TEST_PIPY_API_LOGIN}}
-        PWD = ${{secrets.TEST_PIPY_API_MDP}}
+        LOGIN : ${{secrets.TEST_PIPY_API_LOGIN}}
+        PWD  : ${{secrets.TEST_PIPY_API_MDP}}
 
   
 
