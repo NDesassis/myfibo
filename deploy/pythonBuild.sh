@@ -13,6 +13,6 @@ export TWINE_PASSWORD=$3
 echo $1
 ls
 pwd
-python3 -m twine upload --repository-url https://test.pypi.org/legacy/ $1/dist/*
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 
